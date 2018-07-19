@@ -55,9 +55,6 @@ def getValueForName(dicts, name):
 
     return None
 
-idx = 0
-cleanData = []
-
 def extractFieldFromEntry(entry, field):
     if field in entry['secureContents']:
         return entry['secureContents'][field]
@@ -79,6 +76,7 @@ def extractFieldsFromSource(data, quiet=False):
     fields are NOT always at the top level of the data structure.
     """
     completeEntries = 0
+    cleanData = []
     for site in data:
         pwSource = 'field'
         title = site['title']
