@@ -12,3 +12,23 @@ couple of days.
 
 NB: this is a best-effort thing. It only handles sites right now, it won't do
 secure notes or credit cards or driver's licenses or anything else. Just sites.
+
+## Usage
+
+You'll want to run this in a virtualenv. There are plenty of docs on the
+internet explaining how to do this. Here's the gist of it:
+
+```
+$ pip install virtualenv
+$ virtualenv .venv
+$ pip install -r requirements.txt
+$ ./1password-to-lastpass.py --help
+```
+
+## License
+
+This program is provided AS IS with no warranty of any kind and even though it
+works for me I would not be surprised in the slightest if it does not work for
+you. Feel free to do as you wish with this program. Change it, share it, sell it
+(good luck), I don't care. If you do make improvements, I will be happy to
+review PRs!
