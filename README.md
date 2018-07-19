@@ -25,6 +25,15 @@ $ pip install -r requirements.txt
 $ ./1password-to-lastpass.py --help
 ```
 
+Actually run the script like this:
+
+```
+$ ./1password-to-lastpass.py /path/to/your/export.1pif/data.1pif
+```
+
+The above command would generate a LastPass CSV at
+`/path/to/your/export.1pif/data.csv`.
+
 ## License
 
 This program is provided AS IS with no warranty of any kind and even though it
