@@ -7,6 +7,7 @@ import json
 import sys
 import os.path
 
+
 def loadDataFromExportFile(filename):
     with open(filename, 'r') as fp:
         rawLines = fp.read().splitlines()
@@ -16,6 +17,7 @@ def loadDataFromExportFile(filename):
     data = json.loads(rawJson)
 
     return data
+
 
 def looksLike1PasswordFile(lines):
     """
@@ -27,8 +29,10 @@ def looksLike1PasswordFile(lines):
 
     return len(guidLines) == len(dataLines)
 
+
 def filterDictsByKeyVal(dicts, key, val):
     return filter(lambda d: key in d.keys() and d[key] == val, dicts)
+
 
 def getValueForName(dicts, name):
     """
@@ -55,6 +59,7 @@ def getValueForName(dicts, name):
 
     return None
 
+
 def extractFieldFromEntry(entry, field):
     if field in entry['secureContents']:
         return entry['secureContents'][field]
@@ -68,6 +73,7 @@ def extractFieldFromEntry(entry, field):
         except KeyError:
             return None
 
+
 def extractFieldsFromSource(data, quiet=False):
     """
     Extract the username, password, and URL fields that are
@@ -78,15 +84,15 @@ def extractFieldsFromSource(data, quiet=False):
     completeEntries = 0
     cleanData = []
     for site in data:
-        pwSource = 'field'
         title = site['title']
 
         try:
             url = site['location']
         except KeyError:
             if 'typeName' in site and \
-               ('wallet' in site['typeName'] or \
+               ('wallet' in site['typeName'] or
                 'securenote' in site['typeName']):
+
                 if not quiet:
                     click.echo('-', nl=False)
                 continue
@@ -121,11 +127,13 @@ def extractFieldsFromSource(data, quiet=False):
 
     click.echo('\n')
     click.echo('Processed {} entries.'.format(len(data)))
-    click.echo('Found {} complete entries (url, username, and password extracted).'
-               .format(completeEntries))
+    click.echo(
+        'Found {} complete entries (url, username, and password extracted).'
+        .format(completeEntries))
     percentSuccess = int(round((float(completeEntries) / len(data)) * 100, 0))
     click.echo('{}% success rate.'.format(percentSuccess))
     return cleanData
+
 
 def writeCSV(data, filename):
     """
@@ -151,6 +159,7 @@ def writeCSV(data, filename):
             #                         site['password'],
             #                         site['name']))
 
+
 @click.command()
 @click.argument('filename')
 def main(filename):
@@ -172,6 +181,7 @@ def main(filename):
     outputFilename = os.path.join(os.path.dirname(filename), 'data.csv')
     writeCSV(cleanData, outputFilename)
     click.echo('\nData written to {}.'.format(outputFilename))
+
 
 if __name__ == '__main__':
     main()
