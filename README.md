@@ -34,10 +34,17 @@ $ 1password-to-lastpass /path/to/your/export.1pif/data.1pif
 The above command would generate a LastPass CSV at
 `/path/to/your/export.1pif/data.csv`.
 
-## License
+## GNU GPLv3
 
-This program is provided AS IS with no warranty of any kind and even though it
-works for me I would not be surprised in the slightest if it does not work for
-you. Feel free to do as you wish with this program. Change it, share it, sell it
-(good luck), I don't care. If you do make improvements, I will be happy to
-review PRs!
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
