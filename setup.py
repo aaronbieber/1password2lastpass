@@ -7,6 +7,11 @@ setup(
     install_requires=[
         'Click',
     ],
+    extras_require={
+        'dev': [
+            'flake8'
+        ]
+    },
     entry_points='''
         [console_scripts]
         1password2lastpass=1password2lastpass:main

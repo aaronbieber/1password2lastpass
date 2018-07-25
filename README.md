@@ -34,6 +34,32 @@ $ 1password-to-lastpass /path/to/your/export.1pif/data.1pif
 The above command would generate a LastPass CSV at
 `/path/to/your/export.1pif/data.csv`.
 
+## Developing
+
+Oh, you want to help me out? Hey, that'd be swell. You can use `setuptools` to
+get yourself up and running for development. Here's how!
+
+First create a virtualenv. If you use the great `virtualenvwrapper` you can
+simply run `mkvirtualenv some_env_name`. If you do not, then creating the
+virtualenv is left as an exercise for the reader.
+
+Activate the virtualenv (this is very important), and then install the script
+for development with:
+
+```
+$ pip install -e '.[dev]'
+```
+
+Note that `.[dev]` only needs to be quoted in zsh; it does not need to be quoted
+in bash. But you really should use zsh because it is awesome.
+
+Congratulations, you now have `1password2lastpass` on your path. Verify that it
+is installed in your virtualenv with `which 1password2lastpass`, which should
+give you a value similar to `~/.virualenvs/some_env_name/bin/1password2lastpass`.
+
+The bracketed `dev` specification tells `pip` to also install `flake8`, for
+which I have provided a simple config in `.flake8`.
+
 ## GNU GPLv3
 
 This program is free software: you can redistribute it and/or modify
