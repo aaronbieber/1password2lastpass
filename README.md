@@ -15,20 +15,20 @@ secure notes or credit cards or driver's licenses or anything else. Just sites.
 
 ## Usage
 
-You'll want to run this in a virtualenv. There are plenty of docs on the
-internet explaining how to do this. Here's the gist of it:
+This script assumes that you have `setuptools`, which you should already have if
+you have `pip`. To start from square one, [follow these
+instructions](https://packaging.python.org/tutorials/installing-packages/#ensure-you-can-run-pip-from-the-command-line)
+
+Install the program by running:
 
 ```
-$ pip install virtualenv
-$ virtualenv .venv
-$ pip install -r requirements.txt
-$ ./1password-to-lastpass.py --help
+$ python setup.py install
 ```
 
 Actually run the script like this:
 
 ```
-$ ./1password-to-lastpass.py /path/to/your/export.1pif/data.1pif
+$ 1password-to-lastpass.py /path/to/your/export.1pif/data.1pif
 ```
 
 The above command would generate a LastPass CSV at
