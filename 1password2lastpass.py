@@ -144,7 +144,7 @@ def writeCSV(data, filename):
                   'password',
                   'name']
 
-    with open('/tmp/lastpass_import.csv', 'w') as csvFile:
+    with open(filename, 'w') as csvFile:
         csvWriter = csv.DictWriter(csvFile, fieldnames=fieldnames)
         csvWriter.writeheader()
 
@@ -153,11 +153,6 @@ def writeCSV(data, filename):
                                 'username': site['username'],
                                 'password': site['password'],
                                 'name': site['name']})
-
-            # print("- {},{},{},{}".format(site['url'],
-            #                         site['username'],
-            #                         site['password'],
-            #                         site['name']))
 
 
 @click.command()
@@ -181,7 +176,3 @@ def main(filename):
     outputFilename = os.path.join(os.path.dirname(filename), 'data.csv')
     writeCSV(cleanData, outputFilename)
     click.echo('\nData written to {}.'.format(outputFilename))
-
-
-if __name__ == '__main__':
-    main()
