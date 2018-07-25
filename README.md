@@ -28,7 +28,7 @@ $ python setup.py install
 Actually run the script like this:
 
 ```
-$ 1password-to-lastpass.py /path/to/your/export.1pif/data.1pif
+$ 1password-to-lastpass /path/to/your/export.1pif/data.1pif
 ```
 
 The above command would generate a LastPass CSV at
